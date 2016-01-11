@@ -269,7 +269,7 @@ Date:   Mon Jan 11 19:22:51 2016 +0100
 
 					<!-- checkout -->
 					<section>
-						<h2>checkout</h2>
+						<h2>checkout #commit</h2>
 						<p>Pour se déplacer dans l'histoire</p>
 						<pre><code class="hljs" data-trim contenteditable>
 git checkout 2dc24bc314f
@@ -277,6 +277,20 @@ git checkout 2dc24bc314f
 						<p>Si vous regardez votre fichier, vous verrez qu'il est revenu à l'état où il y avait hello. Pour revenir au dernier état</p>
 						<pre><code class="hljs" data-trim contenteditable>
 git checkout master
+						</code></pre>
+						<p>Attention: pour se déplacer dans l'histoire, il faut être "clean", c'est-à-dire ne pas avoir de modifications non-commitées.</p>
+					</section>
+
+					<!-- checkout uncommited changes -->
+					<section>
+						<h2>checkout #file</h2>
+						<p>Pour revenir au dernier commit  </p>
+						<pre><code class="hljs" data-trim contenteditable>
+git checkout testFile.txt
+						</code></pre>
+						<p>va remmetre le fichier tel qu'il était au dernier commit. Pour faire la même chose avec tous les fichiers à la fois (dans le cas d'un projet complet): </p>
+						<pre><code class="hljs" data-trim contenteditable>
+git checkout --hard HEAD
 						</code></pre>
 					</section>
 
@@ -289,6 +303,89 @@ git checkout master
 
 
 
+					<!-- branch -->
+					<section>
+						<h2>branch</h2>
+						<p>Pour créer une branche quand on est clean:</p>
+						<pre><code class="hljs" data-trim contenteditable>
+git branch newVersion
+						</code></pre>
+						<p>Lister les branches</p>
+						<pre><code class="hljs" data-trim contenteditable>
+git branch
+						</code></pre>
+						<p>se mettre sur la branche</p>
+						<pre><code class="hljs" data-trim contenteditable>
+git checkout newVersion
+						</code></pre>
+						<p>ou, si on a déjà fait des modifications, qu'elles parraissent importantes et qu'on veut les séparer sur une nouvelle branche</p>
+						<pre><code class="hljs" data-trim contenteditable>
+git checkout -b newVersion
+						</code></pre>
+					</section>
+					<section>
+						<h2>branch</h2>
+						<p>Pour voir où on en est: </p>
+						<pre><code class="hljs" data-trim contenteditable>
+git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short --all
+						</code></pre>
+						<p>(se faire un alias) donne: </p>
+						<pre><code class="hljs" data-trim contenteditable>
+* ae5830b 2016-01-11 | added a third file (HEAD -> newVersion) [vallettea]
+| * 58f41af 2016-01-11 | added a second file (master) [vallettea]
+|/
+* 5bf345a 2016-01-11 | changed hello in bonjour [vallettea]
+* 2dc24bc 2016-01-11 | added hello to the file [vallettea]
+* c04b811 2016-01-11 | added empty file to project [vallettea]						</code></pre>
+					</section>
+
+					<!-- schema -->
+					<section>
+						<h2>Résumé</h2>
+						<p>Les branches permettent d'organiser ses modifications</p>
+						<img width="300" data-src="https://www.atlassian.com/wac/landing/git/tutorial/pageSections/00/pageSections/01/contentColumnTwo/0/imageBinary/git-tutorial-branching-merge-1.png" alt="Down arrow">
+					</section>
+
+					<!-- merge -->
+					<section>
+						<h2>merge</h2>
+						<p>Remettons nous sur master</p>
+						<pre><code class="hljs" data-trim contenteditable>
+git checkout master
+						</code></pre>
+						<p>et apportons tous les changements fait sur newVersion sur master :</p>
+						<pre><code class="hljs" data-trim contenteditable>
+git merge newVersion
+						</code></pre>
+					</section>
+					<section>
+						<h2>merge</h2>
+						<p>Pour voir où on en est: </p>
+						<pre><code class="hljs" data-trim contenteditable>
+git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short --all
+						</code></pre>
+						<p>(se faire un alias) donne: </p>
+						<pre><code class="hljs" data-trim contenteditable>
+*   867fdd6 2016-01-11 | Merge branch 'newVersion' (HEAD -> master) [vallettea]
+|\
+| * ae5830b 2016-01-11 | added a third file (newVersion) [vallettea]
+* | 58f41af 2016-01-11 | added a second file [vallettea]
+|/
+* 5bf345a 2016-01-11 | changed hello in bonjour [vallettea]
+* 2dc24bc 2016-01-11 | added hello to the file [vallettea]
+* c04b811 2016-01-11 | added empty file to project [vallettea]						
+						</code></pre>
+					</section>
+
+					<!-- schema -->
+					<section>
+						<h2>Résumé</h2>
+						<p>Merger sert a faire converger les modifications crées sur les branches vers une version finale.</p>
+						<img width="300" data-src="https://www.atlassian.com/wac/landing/git/tutorial/pageSections/00/pageSections/02/contentColumnTwo/0/imageBinary/git-tutorial-rewriting-history-1.png" alt="Down arrow">
+					</section>
+
+
+
 
 
 					<!-- pour aller plus loin  -->
@@ -297,6 +394,7 @@ git checkout master
 						<ul>
 							<li>git stash</li>
 							<li>.gitignore</li>
+							<li><a href="http://gitimmersion.com/lab_11.html">alias dans .gitconfig</a></li>
 						</ul>
 					</section>
 
@@ -304,9 +402,11 @@ git checkout master
 					<section>
 						<h3>Ressources :</h3>
 						<ul>
-							<li><a href="http://www.git-scm.com/doc"></a>doc officielle</li>
+							<li><a href="http://www.git-scm.com/doc">doc officielle</a></li>
 							<li><a href="http://pcottle.github.io/learnGitBranching/">tutorial interactif</a></li>
 							<li><a href="https://try.github.io/levels/1/challenges/1">git command line simulator</a></li>
+							<li><a href="http://gitimmersion.com">bon tutorial</a></li>
+							<li><a href="https://www.atlassian.com/pt/git/">autre bonne documentation</a></li>
 						</ul>
 					</section>
 
