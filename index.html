@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Ants - formation</title>
+
+		<meta name="description" content="The slides used to teach companies to code like hackers.">
+		<meta name="author" content="Ants">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Data-science</h1>
+					<h3>et méthodes de hackers</h3>
+					<p>
+						<small>par <a href="http://ants.builders">ants</a> / <a href="http://twitter.com/beingAnts">@beingAnts</a></small>
+					</p>
+				</section>
+
+				<!-- Intro formation -->
+				<section>
+					<section>
+						<h2>Objectif</h2>
+						<p>
+							Vous rendre 
+							<span class="fragment highlight-blue">organisés</span>, 
+							<span class="fragment highlight-blue">armés</span> et
+							<span class="fragment highlight-blue">autonomes</span>
+							pour apprendre de la <span class="fragment highlight-red">data-science</span> par la pratique.
+						</p>
+					</section>
+
+					<section>
+						<h2>Programme</h2>
+							<ol>
+								<li>travailler à plusieurs</li>
+								<li>les langages du web</li>
+								<li>dataviz: tableau de bord de consommation d'eau (3 jours)</li>
+								<li>...</li>
+							</ol>
+						</p>
+					</section>
+
+					<section>
+						<h2>Spirit</h2>
+							<ol>
+								<li>NOS outils sur VOS projets avec VOS data</li>
+								<li>on couvre large, vous hackez le reste</li>
+								<li>support</li>
+							</ol>
+						</p>
+					</section>
+
+				</section>
+
+				<!-- git -->
+				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+					<section>
+						<h1>Git</h1>
+						<h3>organiser son code et son travail</h3>
+					</section>
+					<!-- intro git github -->
+					<section>
+						<h2>Git / GitHub</h2>
+						<p>Git: gestionnaire de version (sur votre ordinateur)</p>
+						<p>GitHub: plateforme d'échange (sur le cloud)</p>
+					</section>
+					<section>
+						<p>
+							Git évite de dupliquer du code pour le versioner, permet de revenir en arrière et surtout permet de toujours savoir où on en est.
+						</p>
+						<p>
+							Outils indispensable pour organiser son travail sur un gros projet.
+						</p>
+					</section>
+					<section>
+						<p>GitHub permet de s'échanger du code, de travailler à plusieurs sur un même projet et de communiquer sur les problèmes.</p>
+						<p>GitHub permet en outre de déployer des services et de recruter.</p>
+					</section>
+
+					<!-- environement de travail -->
+					<section>
+						<h2>Environnement de travail</h2>
+						<ul>
+							<li>Editeur : <a href="https://atom.io/">Atom</a>, <a href="http://www.sublimetext.com/3">Sublime</a></li>
+							<li>Console : iTerm2 (mac), <a href="https://conemu.github.io/">ConEmu</a></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Configurer git</h2>
+						<pre><code class="hljs" data-trim contenteditable>
+// dans le cas où vous êtes derrière un proxy
+git config --global http.proxy http://proxyuser:proxypwd@proxy.server.com:8080
+git config --global https.proxy https://proxyuser:proxypwd@proxy.server.com:8080
+
+// si vous ne l'avez jamais fait auparavant
+git config --global user.name "Your Name"
+git config --global user.email "your_email@whatever.com"
+
+// pour windows
+git config --global core.autocrlf true
+git config --global core.safecrlf true
+						</code></pre>
+					</section>
+
+					<!-- boucle 1 status/add/commit/ -->
+					<!-- init -->
+					<section>
+						<h2>Init</h2>
+						<pre><code class="hljs" data-trim contenteditable>
+// créer un dossier
+mkdir testgit
+// s'y déplacer
+cd testgit
+// initialison git
+git init
+						</code></pre>
+						<p>ce qui crée un dossier `.git` contenant tout ce qui concerne git. C'est léger.</p>
+					</section>
+					<!-- status -->
+					<section>
+						<h2>Status</h2>
+						<pre><code class="hljs" data-trim contenteditable>
+git status
+						</code></pre>
+						<p>donne:</p>
+						<pre><code class="hljs" data-trim contenteditable>
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+						</code></pre>
+					</section>
+					<section>
+						<h2>Status</h2>
+						<pre><code class="hljs" data-trim contenteditable>
+touch testFile.txt
+						</code></pre>
+						<p>après ce fichier crée, status donne:</p>
+						<pre><code class="hljs" data-trim contenteditable>
+Untracked files:
+(use "git add <file>..." to include in what will be committed)
+
+	testFile.txt
+						</code></pre>
+					</section>
+
+					<!-- add -->
+					<section>
+						<h2>add</h2>
+						<pre><code class="hljs" data-trim contenteditable>
+git add testFile.txt
+						</code></pre>
+						<p>indique a git qu'on veut le versioner</p>
+						<pre><code class="hljs" data-trim contenteditable>
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   testFile.txt
+						</code></pre>
+					</section>
+
+					<!-- commit -->
+					<section>
+						<h2>commit</h2>
+						<pre><code class="hljs" data-trim contenteditable>
+git commit
+						</code></pre>
+						<p>ouvre un éditeur (vim, nano) pour nommer le commit.</p>
+						<p>Une alternative rapide:</p>
+						<pre><code class="hljs" data-trim contenteditable>
+git commit -m"added empty file to project"
+						</code></pre>
+						<p>faites un status pour voir...</p>
+					</section>
+
+					<!-- loop -->
+					<section>
+						<p>On itère au fur et a mesure des changements qu'on veut persister :</p>
+						<pre><code class="hljs" data-trim contenteditable>
+// on ajoute une ligne au fichier (normalement utiliser l'éditeur)
+echo "hello" > testFile.txt
+git status
+git commit -am"added hello to the file"
+						</code></pre>
+					</section>
+
+
+					<!-- diff -->
+					<section>
+						<h2>diff</h2>
+						<p>faites une modification</p>
+						<pre><code class="hljs" data-trim contenteditable>
+git diff
+						</code></pre>
+						<p>indique les changements par rapport au dernier commit</p>
+						<pre><code class="hljs" data-trim contenteditable>
+-hello
++bonjour
+						</code></pre>
+					</section>
+
+					<!-- schema -->
+					<section>
+						<h2>Résumé</h2>
+						<p>Chaque commit permet de poser une bouée pour repérer un état du code.</p>
+						<img width="300" data-src="https://www.atlassian.com/wac/landing/git/tutorial/pageSections/00/pageSections/0/contentColumnTwo/0/imageBinary/git_training-basics.png" alt="Down arrow">
+					</section>
+
+					<!-- logs -->
+					<section>
+						<h2>logs</h2>
+						<p>Pour avoir une vue de l'histoire</p>
+						<pre><code class="hljs" data-trim contenteditable>
+git log
+						</code></pre>
+						<pre><code class="hljs" data-trim contenteditable>
+commit 5bf345af8448979acd16ec07621561f8628211fa
+Author: vallettea <vallettea@gmail.com>
+Date:   Mon Jan 11 19:53:32 2016 +0100
+
+    changed hello in bonjour
+
+commit 2dc24bc314fc92fcbf20261ef80ec203088044d9
+Author: vallettea <vallettea@gmail.com>
+Date:   Mon Jan 11 19:32:26 2016 +0100
+
+    added hello to the file
+
+commit c04b81108300ebbe9d367d21c603ae9e3089d55e
+Author: vallettea <vallettea@gmail.com>
+Date:   Mon Jan 11 19:22:51 2016 +0100
+
+    added empty file to project
+						</code></pre>
+					</section>
+
+					<!-- checkout -->
+					<section>
+						<h2>checkout</h2>
+						<p>Pour se déplacer dans l'histoire</p>
+						<pre><code class="hljs" data-trim contenteditable>
+git checkout 2dc24bc314f
+						</code></pre>
+						<p>Si vous regardez votre fichier, vous verrez qu'il est revenu à l'état où il y avait hello. Pour revenir au dernier état</p>
+						<pre><code class="hljs" data-trim contenteditable>
+git checkout master
+						</code></pre>
+					</section>
+
+					<!-- schema -->
+					<section>
+						<h2>Résumé</h2>
+						<p>On utilise log et checkout pour naviguer dans l'histoire des commits</p>
+						<img width="300" data-src="https://www.atlassian.com/wac/landing/git/tutorial/pageSections/00/pageSections/00/contentColumnTwo/0/imageBinary/git-training-undoing-changes.png" alt="Down arrow">
+					</section>
+
+
+
+
+
+					<!-- pour aller plus loin  -->
+					<section>
+						<h3>Pour aller plus loin :</h3>
+						<ul>
+							<li>git stash</li>
+							<li>.gitignore</li>
+						</ul>
+					</section>
+
+					<!-- ressources  -->
+					<section>
+						<h3>Ressources :</h3>
+						<ul>
+							<li><a href="http://www.git-scm.com/doc"></a>doc officielle</li>
+							<li><a href="http://pcottle.github.io/learnGitBranching/">tutorial interactif</a></li>
+							<li><a href="https://try.github.io/levels/1/challenges/1">git command line simulator</a></li>
+						</ul>
+					</section>
+
+
+				</section>
+
+
+				<!-- github -->
+				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+					<section>
+						<h1>GitHub</h1>
+						<h3>Travailler à plusieurs</h3>
+					</section>
+
+				</section>
+
+<!-- 				<section data-background-iframe="http://carvisualizer.plus360degrees.com/threejs/">
+				</section> -->
+
+
+
+<!-- 				<section>
+					<section data-background="#dddddd">
+						<h2>Slide Backgrounds</h2>
+						<p>
+							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
+						</p>
+						<a href="#" class="navigate-down">
+							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
+						<h2>Image Backgrounds</h2>
+						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
+					</section>
+					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
+						<h2>Tiled Backgrounds</h2>
+						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+					</section>
+					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
+						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+							<h2>Video Backgrounds</h2>
+							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+						</div>
+					</section>
+					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+						<h2>... and GIFs!</h2>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+					<h2>Background Transitions</h2>
+					<p>
+						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
+					</p>
+					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+					<h2>Background Transitions</h2>
+					<p>
+						You can override background transitions per-slide.
+					</p>
+					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+				</section> -->
+
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<style type="text/css">
+			.reveal section img {
+			    background: none;
+			    border: none;
+			    box-shadow: none;
+			}
+		</style>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+			// to make iframe background clickable
+			Reveal.addEventListener('slidechanged', function(event) {               
+			     if($(event.currentSlide).attr('data-background-iframe')) {
+			          $('.reveal > .backgrounds').css('z-index', 1);
+			     } else {
+			          $('.reveal > .backgrounds').css('z-index', 0);
+			     }                  
+			});
+
+		</script>
+
+	</body>
+</html>
