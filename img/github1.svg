@@ -1,0 +1,22 @@
+<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <g>
+  <title>Layer 1</title>
+  <line fill="none" stroke-width="2" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x1="68.99999" y1="104" x2="585.99998" y2="104" id="svg_15" stroke-opacity="0.6" stroke="#000000"/>
+  <text fill="#000000" stroke="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" stroke-opacity="0.6" x="55" y="59" id="svg_16" font-size="14" font-family="Monospace" text-anchor="middle" xml:space="preserve">internet</text>
+  <text fill="#000000" stroke="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" stroke-opacity="0.6" x="52.01563" y="146.25" font-size="14" font-family="Monospace" text-anchor="middle" xml:space="preserve" id="svg_17">your</text>
+  <text fill="#000000" stroke="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" stroke-opacity="0.6" x="51.01563" y="172.25" font-size="14" font-family="Monospace" text-anchor="middle" xml:space="preserve" id="svg_18">computer</text>
+  <path fill="#ffffff" stroke="#5b4545" stroke-width="2" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" d="m195.77966,114.85318c-1.65228,-2.89569 -7.99786,-4.33371 -20.50537,-4.64679l-8.45746,-0.21109l0,-2.53388l0,-2.53384l6.38367,0c7.5257,0 12.90677,-0.52069 17.29767,-1.67343c2.59103,-0.68073 3.45212,-1.11328 4.62338,-2.32858l1.43918,-1.49253l4.12793,4.14234l4.12817,4.14233l-4.17429,4.17133l-4.17404,4.1702l-0.68884,-1.20606z" transform="rotate(132.93994140625 185.81683349609378,107.74615478515624) " id="svg_20"/>
+  <text fill="#000000" stroke="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" stroke-opacity="0.6" x="117.00781" y="96" font-size="14" font-family="Monospace" text-anchor="middle" xml:space="preserve" id="svg_21" font-weight="bold">push</text>
+  <path fill="#ffffff" stroke="#5b4545" stroke-width="2" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" d="m157.40282,108.40506c-1.6523,-2.89569 -7.99785,-4.33368 -20.50539,-4.64679l-8.45744,-0.21106l0,-2.53388l0,-2.53387l6.38368,0c7.52567,0 12.90674,-0.52069 17.29764,-1.6734c2.59105,-0.68073 3.45213,-1.11328 4.6234,-2.32861l1.43916,-1.4925l4.12796,4.14234l4.12816,4.14233l-4.1743,4.17133l-4.17401,4.17016l-0.68886,-1.20605z" id="svg_19" transform="rotate(-47.24089050292969 147.4399871826172,101.29803466796876) "/>
+  <text font-weight="bold" stroke="#000000" xml:space="preserve" text-anchor="middle" font-family="Monospace" font-size="14" id="svg_3" y="121" x="216" stroke-opacity="0.6" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">pull</text>
+  <g id="svg_4">
+   <rect fill="#77e5b7" stroke-width="2" x="91" y="130" width="124" height="57" id="svg_1" stroke="#000000"/>
+   <text fill="#000000" stroke="#000000" stroke-width="0" x="152" y="164" id="svg_2" font-size="18" font-family="Monospace" text-anchor="middle" xml:space="preserve">your local</text>
+  </g>
+  <g id="svg_5">
+   <ellipse fill="#9999c4" stroke="#000000" stroke-width="2" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" cx="232" cy="51" id="svg_11" rx="82" ry="24"/>
+   <text fill="#000000" stroke="#000000" stroke-width="0" x="232" y="56" font-size="18" font-family="Monospace" text-anchor="middle" xml:space="preserve" id="svg_6">your remote</text>
+  </g>
+ </g>
+</svg>

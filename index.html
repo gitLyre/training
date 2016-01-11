@@ -384,10 +384,6 @@ git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short --all
 						<img width="300" data-src="https://www.atlassian.com/wac/landing/git/tutorial/pageSections/00/pageSections/02/contentColumnTwo/0/imageBinary/git-tutorial-rewriting-history-1.png" alt="Down arrow">
 					</section>
 
-
-
-
-
 					<!-- pour aller plus loin  -->
 					<section>
 						<h3>Pour aller plus loin :</h3>
@@ -414,6 +410,8 @@ git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short --all
 				</section>
 
 
+
+
 				<!-- github -->
 				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
 					<section>
@@ -421,58 +419,121 @@ git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short --all
 						<h3>Travailler à plusieurs</h3>
 					</section>
 
+					<section>
+						<h2>GitHub permet de :</h2>
+						<ul>
+							<li>stocker son code en ligne</li>
+							<li>travailler à plusieurs sur un même code</li>
+							<li>communiquer entre membre d'une équipe</li>
+							<li>documenter</li>
+							<li>déployer</li>
+							<li>embaucher ...</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Crée un répertoire (repo)</h2>
+						<img width="600" data-src="img/create_repo.png">
+					</section>
+
+					<section>
+						<h2>Remote</h2>
+						<p>Remote indique le chemin entre ce repo vers un dépot github :</p>
+						<pre><code class="hljs" data-trim contenteditable>
+git remote add anthill https://github.com/anthill/training.git
+git push -u anthill master						
+						</code></pre>
+						<p>où <code>anthill</code> est le nom du dépot. Un repo peut avoir plusieur remote (voir fork).</p>
+					</section>
+
+					<section>
+						<h2>push</h2>
+						<p>Pour synchroniser un repo local avec un remote, on utilise d'une part :</p>
+						<pre><code class="hljs" data-trim contenteditable>
+git push -u anthill master						
+						</code></pre>
+						<p>où <code>master</code> est le nom de la branche qu'on veut synchroniser. </p>
+						<p><code>push</code> s'utilise lorsque le repo local est en avance sur le remote.</p>
+						<pre><code class="hljs" data-trim contenteditable>
+Counting objects: 101, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (93/93), done.
+Writing objects: 100% (101/101), 1.46 MiB | 145.00 KiB/s, done.
+Total 101 (delta 17), reused 0 (delta 0)
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>pull</h2>
+						<p>Si le remote est en avance sur le repo local (quelqu'un a ajouté du code) on utilise :</p>
+						<pre><code class="hljs" data-trim contenteditable>
+git pull anthill master						
+						</code></pre>
+						<p>où <code>master</code> est le nom de la branche qu'on veut synchroniser. </p>
+					</section>
+
+					<!-- schema -->
+					<section>
+						<h2>Résumé</h2>
+						<p>Avec <code>remote, push et pull</code> vous pouvez synchoniser votre code dans le cloud (sauvegarde)</p>
+						<img width="900" float="right" data-src="img/github1.svg" alt="Down arrow">
+					</section>
+
+					<!-- clone -->
+					<section>
+						<h2>clone</h2>
+						<p>Un autre dévelopeur veut travailler sur votre code :</p>
+						<img width="700" float="right" data-src="img/github_clone.png">
+						<pre><code class="hljs" data-trim contenteditable>
+git clone https://github.com/anthill/training.git 						
+						</code></pre>
+						<p>va crée une copie locale de votre remote. </p>
+						<p><small>(que donne <code>git remote -v</code> ?)</small></p>
+					</section>
+
+					<!-- fork -->
+					<section>
+						<h2>fork</h2>
+						<p>Au lieu de créer une copie de votre remote sur son local, il vaut mieux que le contributeur fasse une copie de votre remote sur un remote à lui. C'est la combinaison fork/clone.</p>
+
+						<p><small>(que donne <code>git remote -v</code> ?)</small></p>
+					</section>
+
+					<!-- pull request -->
+					<section>
+						<h2>pull request</h2>
+						<p>Lorsqu'un contributeur estime que les modification de son code devraient être incorporées à la version principale, il met synchronise son remote et crée un <code>pull request</code></p>
+						<img width="700" float="right" data-src="https://www.packtpub.com/sites/default/files/Article-Images/B03497_04_01.png">
+					</section>
+
+					<!-- schema -->
+					<section>
+						<h2>Résumé</h2>
+						<p>Les pull request de forks permettent d'intégrer les contributions:</p>
+						<img width="900" float="right" data-src="img/github2.svg">
+					</section>
+
+					<!-- markdown -->
+					<section>
+						<h2>Ecrire vite et bien en markdown</h2>
+						<p>Toutes les zones de texte de github permettent d'écrire en markdown</p>
+					</section>
+
+					<!-- les features de github  -->
+					<section>
+						<h3>Les incontournables de github :</h3>
+						<ul>
+							<li>issues</li>
+							<li>pull request</li>
+							<li>milestones</li>
+							<li>wiki</li>
+							<li>metriques</li>
+						</ul>
+					</section>
+
+					
+
 				</section>
-
-<!-- 				<section data-background-iframe="http://carvisualizer.plus360degrees.com/threejs/">
-				</section> -->
-
-
-
-<!-- 				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section> -->
-
 
 
 			</div>
