@@ -1,14 +1,9 @@
 Slides from our training session.
 
+Summary:
 
-# grand titre
-
-Voici le `readme.md` du répo. 
-
-## Comment démarrer.
-
-
-```
-// pour demarrer le server
-node server.js
-```
+- intro and programm
+- git (day 1)
+- github (day 1)
+- html, css (day 2)
+- javascript (day 2)

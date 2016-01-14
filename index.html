@@ -6,7 +6,7 @@
 
 		<title>Ants - formation</title>
 
-		<meta name="description" content="The slides used to teach companies to code like hackers.">
+		<meta name="description" content="The slides used to teach companies how to code like hackers.">
 		<meta name="author" content="Ants">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,6 +16,7 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/ants.css">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -64,9 +65,10 @@
 					<section>
 						<h2>Programme</h2>
 							<ol>
-								<li>travailler à plusieurs</li>
-								<li>les langages du web</li>
+								<li>travailler à plusieurs (git/github)</li>
+								<li>les langages du web (html, css, javascript)</li>
 								<li>dataviz: tableau de bord de consommation d'eau (3 jours)</li>
+								<li>docker, déploiement ?</li>
 								<li>...</li>
 							</ol>
 						</p>
@@ -531,9 +533,328 @@ git clone https://github.com/anthill/training.git
 						</ul>
 					</section>
 
+				</section>
+
+
+				<!-- html/css -->
+				<section data-transition="slide" data-background="#00539F" data-background-transition="zoom">
+					<section>
+						<h1>html / css</h1>
+						<h3>Les langages du web</h3>
+					</section>
+
+					<section>
+						<h1>HTML</h1>
+						<h3>structurer le contenu<h3>
+					</section>
+
+					<section>
+						<h2>balise</h2>
+						<p>Les elements d'une page sont représenté par une balise :</p>
+						<pre><code class="html" data-trim contenteditable>
+<element attribut="valeur" ...>contenu</element>				
+						</code></pre>
+						<p>Certains éléments sont solitaires d'autres s'associent.</p>
+					</section>
+
+					<section>
+						<h2>balise</h2>
+						<p>3 types d'éléments :</p>
+						<ul>
+							<li>de flux</li>
+							<li>de phrasé</li>
+							<li>de méta-données</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>balises de méta-données</h2>
+						<p>se placent dans l'en-tête de la page :</p>
+						<pre><code class="html" data-trim contenteditable>
+<meta name="description" content="The slides used to teach companies how to code like hackers.">
+<link rel="stylesheet" href="css/reveal.css">				
+						</code></pre>
+						<p>Ils servent à charger des ressources extérieures (css, javascript, données ...)</p>
+					</section>
+
+					<section>
+						<h2>balises de méta-données</h2>
+						<ul>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/doctype"><code>!doctype</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head"><code>head</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title"><code>title</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link"><code>link</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta"><code>meta</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style"><code>style</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script"><code>script</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript"><code>noscript</code></a></li>
+						</ul>
+					</section>
+
+
+					<section>
+						<h2>web sémantique</h2>
+						<p><strong>un type de balise = un rôle sémantique</strong></p>
+						<p>les balises servent à structurer l'information pour que les machines (navigateur, moteur de recherche ...) puissent la comprendre</p>
+					</section>
+
+					<section>
+						<h2>web sémantique</h2>
+						<p>Par exemple, h (header) peut avoir différents poids :</p>
+						<pre><code class="html" data-trim contenteditable>
+<h1>Titre très important</h1>
+<h2>Titre important</h2>
+<h3>Titre moins important</h3>	
+...		
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Structure d'une page</h3>
+						<img width="700" float="right" data-src="img/html_structure.png">
+						<p><a style="font-size: 0.4em;" href="http://www.brianfran.co/wroteabook/">An illustrative guide to front-end developement</a></p>
+					</section>
+
+					<section>
+						<h3>Structure d'une page</h3>
+						<img width="600" float="right" data-src="img/html_structure2.png">
+						<p><a style="font-size: 0.4em;" href="http://www.brianfran.co/wroteabook/">An illustrative guide to front-end developement</a></p>
+					</section>
+
+					<section>
+						<h2>balises de section</h2>
+						<ul>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body"><code>body</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article"><code>article</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav"><code>nav</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside"><code>aside</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section"><code>section</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header"><code>header</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer"><code>footer</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h1"><code>h1...h6</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main"><code>main</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address"><code>address</code></a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>balises de groupement</h2>
+						<ul>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p"><code>p</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr"><code>hr</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre"><code>pre</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote"><code>blockquote</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol"><code>ol</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul"><code>ul</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li"><code>li</code></a></li>
+							<li>
+								<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl"><code>dl</code></a>, 
+								<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt"><code>dt</code></a>,
+								<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd"><code>dd</code></a>
+							</li>
+							<li>
+								<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure"><code>figure</code></a>,
+								<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption"><code>figcaption</code></a>
+							</li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div"><code>div</code></a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>balises de tableau</h2>
+						<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table">Pour les tableaux :</a></p>
+						<pre><code class="html" data-trim contenteditable>
+<table>
+  <thead>
+    <tr>
+      <th>Header content 1</th>
+      <th>Header content 2</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td>Footer content 1</td>
+      <td>Footer content 2</td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <td>Body content 1</td>
+      <td>Body content 2</td>
+    </tr>
+  </tbody>
+</table>
+						</code></pre>
+					</section>
+					<section>
+						<h2>balises de tableau</h2>
+						<p>Le code précédent donne :</p>
+						<table>
+						  <thead>
+						    <tr>
+						      <th>Header content 1</th>
+						      <th>Header content 2</th>
+						    </tr>
+						  </thead>
+						  <tfoot>
+						    <tr>
+						      <td>Footer content 1</td>
+						      <td>Footer content 2</td>
+						    </tr>
+						  </tfoot>
+						  <tbody>
+						    <tr>
+						      <td>Body content 1</td>
+						      <td>Body content 2</td>
+						    </tr>
+						  </tbody>
+						</table>
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>balises de formulaire</h2>
+						<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form">Pour les formulaires :</a></p>
+						<pre><code class="html" data-trim contenteditable>
+<form action="">
+  <label for="GET-name">Nom :</label>
+  <input id="GET-name" type="text">
+  <input type="submit" value="Save">
+</form>
+
+<!-- Simple form which will send a POST request -->
+<form action="" method="post">
+  <label for="POST-name">Prénom :</label>
+  <input id="POST-name" type="text">
+  <input type="submit" value="Save">
+</form>
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>balises de formulaire</h2>
+						<p>Le code précédent donne :</p>
+<form action="">
+  <label for="GET-name">Nom :</label>
+  <input id="GET-name" type="text">
+  <input type="submit" value="Save">
+</form>
+
+<form action="" method="post">
+  <label for="POST-name">Prénom:</label>
+  <input id="POST-name" type="text">
+  <input type="submit" value="Save">
+</form>
+
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>balises d'interaction</h2>
+						<ul>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details"><code>details</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary"><code>summary</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/command"><code>command</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu"><code>menu</code></a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>balises de contenu</h2>
+						<ul>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img"><code>img</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe"><code>iframe</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed"><code>embed</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object"><code>object</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/param"><code>param</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video"><code>video</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio"><code>audio</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source"><code>source</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas"><code>canvas</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map"><code>object</code></a></li>
+							<li>...</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>balises textuelles</h2>
+						<ul>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a"><code>a</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em"><code>em</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong"><code>strong</code></a></li>
+							<li>
+								<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i"><code>i</code></a>,
+								<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b"><code>b</code></a></li>
+							</li>
+							<li>
+								<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/small"><code>small</code></a>,
+								<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tiny"><code>tiny</code></a>
+							</li>
+							<li>
+								<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr"><code>abbr</code></a>,
+								<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q"><code>q</code></a>,
+								<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite"><code>cite</code></a>,
+								<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn"><code>dfn</code></a>,
+								<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub"><code>sub</code></a>,
+								<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup"><code>sup</code></a>
+							</li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code"><code>code</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span"><code>span</code></a></li>
+							<li>...</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Choisir sa balise :</h3>
+						<img width="900" float="right" data-src="img/html_tree_decision.png">
+					</section>
+
+					<section>
+						<h3>Attributs globaux :</h3>
+						<ul>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/accesskey"><code>accesskey</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/class"><code>class</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/style"><code>style</code></a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/hidden"><code>hidden</code></a></li>
+							<li>...</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Attributs spécifiques :</h3>
+						<ul>
+							<li><a href="https://developer.mozilla.org/fr/docs/XUL/Attribute/src"><code>src</code></a></li>
+							<li><a href="https://developer.mozilla.org/fr/docs/XUL/Attribute/alt"><code>alt</code></a></li>
+							<li><a href="https://developer.mozilla.org/fr/docs/XUL/Attribute/href"><code>href</code></a></li>
+							<li><a href="https://developer.mozilla.org/fr/docs/XUL/Attribute/target"><code>target</code></a></li>
+							<li>...</li>
+						</ul>
+					</section>
+
+					
+
+					<section>
+						<h1>CSS</h1>
+						<h3>donner du style...</h3>
+					</section>
+
 					
 
 				</section>
+
+
+
+				<!-- javascript -->
+				<section data-transition="slide" data-background="#F0DA64" data-background-transition="zoom">
+					<section>
+						<h1>Javascript</h1>
+						<h3>Rendre le web dynamique</h3>
+					</section>
+
+					
+
+				</section>
+				
 
 
 			</div>
