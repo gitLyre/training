@@ -478,14 +478,14 @@ git pull anthill master
 					<section>
 						<h2>Résumé</h2>
 						<p>Avec <code>remote, push et pull</code> vous pouvez synchoniser votre code dans le cloud (sauvegarde)</p>
-						<img width="900" float="right" data-src="img/github1.svg" alt="Down arrow">
+						<img width="900" data-src="img/github1.svg" alt="Down arrow">
 					</section>
 
 					<!-- clone -->
 					<section>
 						<h2>clone</h2>
 						<p>Un autre dévelopeur veut travailler sur votre code :</p>
-						<img width="700" float="right" data-src="img/github_clone.png">
+						<img width="700" data-src="img/github_clone.png">
 						<pre><code class="hljs" data-trim contenteditable>
 git clone https://github.com/anthill/training.git 						
 						</code></pre>
@@ -505,14 +505,14 @@ git clone https://github.com/anthill/training.git
 					<section>
 						<h2>pull request</h2>
 						<p>Lorsqu'un contributeur estime que les modification de son code devraient être incorporées à la version principale, il met synchronise son remote et crée un <code>pull request</code></p>
-						<img width="700" float="right" data-src="https://www.packtpub.com/sites/default/files/Article-Images/B03497_04_01.png">
+						<img width="700" data-src="https://www.packtpub.com/sites/default/files/Article-Images/B03497_04_01.png">
 					</section>
 
 					<!-- schema -->
 					<section>
 						<h2>Résumé</h2>
 						<p>Les pull request de forks permettent d'intégrer les contributions:</p>
-						<img width="900" float="right" data-src="img/github2.svg">
+						<img width="900" data-src="img/github2.svg">
 					</section>
 
 					<!-- markdown -->
@@ -611,13 +611,13 @@ git clone https://github.com/anthill/training.git
 
 					<section>
 						<h3>Structure d'une page</h3>
-						<img width="700" float="right" data-src="img/html_structure.png">
+						<img width="700" data-src="img/html_structure.png">
 						<p><a style="font-size: 0.4em;" href="http://www.brianfran.co/wroteabook/">An illustrative guide to front-end developement</a></p>
 					</section>
 
 					<section>
 						<h3>Structure d'une page</h3>
-						<img width="600" float="right" data-src="img/html_structure2.png">
+						<img width="600" data-src="img/html_structure2.png">
 						<p><a style="font-size: 0.4em;" href="http://www.brianfran.co/wroteabook/">An illustrative guide to front-end developement</a></p>
 					</section>
 
@@ -746,7 +746,6 @@ git clone https://github.com/anthill/training.git
   <input type="submit" value="Save">
 </form>
 
-						</code></pre>
 					</section>
 
 					<section>
@@ -806,7 +805,7 @@ git clone https://github.com/anthill/training.git
 
 					<section>
 						<h3>Choisir sa balise :</h3>
-						<img width="900" float="right" data-src="img/html_tree_decision.png">
+						<img width="900" data-src="img/html_tree_decision.png">
 					</section>
 
 					<section>
@@ -838,7 +837,139 @@ git clone https://github.com/anthill/training.git
 						<h3>donner du style...</h3>
 					</section>
 
+					<section>
+						<h3>CSS</h3>
+						<p>Tous les éléments html ont un style par défaut, le CSS sert à personaliser le style de chaque élément.</p>
+					</section>
+
+					<section>
+						<h3>CSS</h3>
+						<p>Anatomie d'un élément :</p>
+						<img width="600" data-src="img/element_anatomy.png">
+					</section>
+
+					<section>
+						<h3>3 façons de définir un style :</h3>
+						<pre><code class="html" data-trim contenteditable>
+// dans l'élément
+<element style="..."></element>
+
+// dans un bloc style
+<style type="text/css"></style>
+
+// dans une stylesheet
+<link rel="stylesheet" href="main.css">
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>4 types de sélécteurs :</h3>
+						<pre><code class="css" data-trim contenteditable>
+p {...} /* sélécteur d'élement */
+
+.class {...} /* sélécteur de classe */
+
+#id {...} /*  sélécteur d'identifiant */
+
+[attr] {...} /* sélécteur d'attribut */
+
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Exemples de sélécteurs d'attributs :</h3>
+						<pre><code class="css" data-trim contenteditable>
+div * {...}
+div p a {...}
+div.maClasse {...}
+div a#monId {...}
+ul > li {...}
+div[class=”maClasse”] {...}
+div + span {...}
+a[class~=”plop”] {...}
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Pseudo-classes</h3>
+						<pre><code class="css" data-trim contenteditable>
+a:link {...}
+a:visited {...}
+a:hover {...}
+div:only-child {...}
+div:only-of-type {...}
+div:first-child {...}
+div:last-child {...}
+div:nth-child(an+b) {...}
+div:nth-last-child(an+b) {...}
+...
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Poids des sélécteurs</h3>
+					</section>
+
+					<section>
+						<h3>display</h3>
+					</section>
+
+					<section>
+						<h3>float et postion</h3>
+					</section>
+
+					<section>
+						<h3>les unités de positionnement</h3>
+					</section>
+
+					<section>
+						<h3>Arborescence d'un projet web :</h3>
+						<pre><code class="css" data-trim contenteditable>
+site/
+	css/
+		main.css
+		myTheme.css
+	fonts/
+	js/
+	img/
+	index.html
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Responsive web design</h3>
+						<img width="800" data-src="http://cdn2.hubspot.net/hubfs/477550/Blog/mars_2015/Content_is_like_water.png?t=1443798056161">
+					</section>
+
+					<section>
+						<h3>Responsive web design</h3>
+						<p>Dans tous les cas :</p>
+						<pre><code class="html" data-trim contenteditable>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+						</code></pre>
+						<p>puis des media-queries :</p>
+						<pre><code class="css" data-trim contenteditable>
+@media only screen and (min-width: 480px) {...}
+						</code></pre>
+					</section>
+
 					
+
+					<section>
+						<h3>Pour aller plus loin :</h3>
+						<ul>
+							<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/Reference"></a>mdn</li>
+							<li><a href="http://tympanus.net/codrops/css_reference/"></a>css reference</li>
+							<li><a href="http://iamvdo.me/blog/ce-que-vous-avez-toujours-voulu-savoir-sur-css"></a>tutorial [fr]</li>
+							<li><a href="http://mediaqueri.es/"></a>mediaqueries</li>
+							<li><a href="http://bradfrost.github.io/this-is-responsive/"></a>this is responsive</li>
+						</ul>
+					</section>
+
+
+
+
+ 
 
 				</section>
 
