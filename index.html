@@ -557,7 +557,7 @@ git clone https://github.com/anthill/training.git
 						<p>Certains éléments sont solitaires d'autres s'associent.</p>
 					</section>
 
-					<section>
+<!-- 					<section>
 						<h2>balise</h2>
 						<p>3 types d'éléments :</p>
 						<ul>
@@ -565,7 +565,7 @@ git clone https://github.com/anthill/training.git
 							<li>de phrasé</li>
 							<li>de méta-données</li>
 						</ul>
-					</section>
+					</section> -->
 
 					<section>
 						<h2>balises de méta-données</h2>
@@ -906,7 +906,7 @@ div:nth-last-child(an+b) {...}
 						</code></pre>
 					</section>
 
-					<section>
+<!-- 					<section>
 						<h3>Poids des sélécteurs</h3>
 					</section>
 
@@ -920,7 +920,7 @@ div:nth-last-child(an+b) {...}
 
 					<section>
 						<h3>les unités de positionnement</h3>
-					</section>
+					</section> -->
 
 					<section>
 						<h3>Arborescence d'un projet web :</h3>
@@ -977,7 +977,275 @@ site/
 						<h3>Rendre le web dynamique</h3>
 					</section>
 
+					<section>
+						<h3>Javascript</h3>
+						<p>Javascript est le langage de programmation des pages web.</p>
+						<ul>
+							<li><strong>Inconvénient :</strong> legacy</li>
+							<li><strong>Avantage :</strong> google, mozilla, facebook etc l'optimisent sans relâche</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Types</h3>
+						<ul>
+							<li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Number">Number</a></li>
+							<li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String">String</a></li>
+							<li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Boolean">Boolean</a></li>
+							<li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Symbol">Symbol</a></li>
+							<li>
+								<a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object">Object</a>
+								<ul>
+									<li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Function">Function</a></li>
+									<li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array">Array</a></li>
+									<li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date">Date</a></li>
+									<li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/RegExp">RegExp</a></li>
+								</ul>
+							</li>
+							<li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/null">null</a></li>
+							<li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/undefined">undefined</a></li>
+						</ul>
+						
+					</section>
+
+					<section>
+						<h3>Number</h3>
+						<pre><code class="hsjs" data-trim contenteditable>
+parseInt("123", 10); // 123
+
+parseInt("010");  //  8
+
+isNaN(NaN); // true
+
+1 / 0; // Infinity
+
+Math.sin(3.5);
+
+var aire = Math.PI * r * r;
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>String</h3>
+						<pre><code class="hsjs" data-trim contenteditable>
+"bonjour".length; // 7
+
+"bonjour".charAt(0); // "b"
+
+"coucou monde".replace("coucou", "bonjour"); // "bonjour monde"
+
+"bonjour".toUpperCase(); // "BONJOUR"
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Boolean</h3>
+						<p>false, 0, la chaîne vide (""), NaN, null et undefined deviennent toutes false </p>
+						<pre><code class="hsjs" data-trim contenteditable>
+Boolean(""); // false
+
+Boolean(234); // true
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Comparaisons</h3>
+						<pre><code class="hsjs" data-trim contenteditable>
+123 == "123"; // true
+1 == true;    // true
+
+123 === "123"; //false
+true === true; // true
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>if</h3>
+						<pre><code class="hsjs" data-trim contenteditable>
+var nom = "des chatons";
+if (nom == "des chiots") {
+  nom += " !";
+} else if (nom == "des chatons") {
+  nom += " !!";
+} else {
+  nom = " !" + nom;
+}
+						</code></pre>
+						<p>les opérateurs logiques :</p>
+						<pre><code class="hsjs" data-trim contenteditable>
+if (nom === "toto" && prenom === "alex")
+if (nom === "toto" || prenom === "alex")
+var permis = (age > 18) ? "oui" : "non";
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>switch</h3>
+						<pre><code class="hsjs" data-trim contenteditable>
+switch(action) {
+    case 'dessiner':
+        dessine();
+        break;
+    case 'manger':
+        mange();
+        break;
+    default:
+        neRienFaire();
+}
+						</code></pre>
+						<p>sans <code>break</code> l'execution se poursuit au block suivant.</p>
+					</section>
+
+					<section>
+						<h3>for</h3>
+						<pre><code class="hsjs" data-trim contenteditable>
+for (var i = 0; i < 5; i++) {
+  // Sera exécutée cinq fois
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>array</h3>
+						<pre><code class="hsjs" data-trim contenteditable>
+var a = new Array();
+a[0] = "chien";
+a[1] = "chat";
+a[2] = "poule";
+a.length; // 3
+
+var a = ["chien", "chat", "poule"];
+a.push("vache");
+
+a.join(", "); // "chien, chat, poule"
+a.slice(1, 3); // ["chat", "poule"]
+a.pop(); // "poule"
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>map / foreach</h3>
+						<pre><code class="hsjs" data-trim contenteditable>
+["a", "b", "c"].forEach(function(element){
+	console.log(element)
+});
+
+var numbers = ["1", "2", "3"].map(function(element){
+	return parseInt(element, 10)
+});
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Object</h3>
+						<p>Les objets javascript sont similaires au dictionnaires en python et plus généralement aux hashmap</p>
+						<pre><code class="hsjs" data-trim contenteditable>
+var obj = new Object();
+var obj = {};
+obj["prenom"] = "Simon";
+obj["nom"] = "Dupont";
+println(obj["nom"])
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Object</h3>
+						<p>Les objets peuvent avoir plusieurs niveaux:</p>
+						<pre><code class="hsjs" data-trim contenteditable>
+var obj = {
+    nom: "Dupont",
+    prenom: "Simon",
+    associes: ["A", "B"]
+    preferences: {
+        couleur: "orange",
+        chiffre: 8
+    }
+}
+						</code></pre>
+						<p>on accède aux champs par enchainement :</p>
+						<pre><code class="hsjs" data-trim contenteditable>
+obj.preferences.couleur; // orange
+obj["preferences"]["chiffre"]; // 8
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>JSON</h3>
+						<p>Les objets peuvent être serialisés en json :</p>
+						<pre><code class="hsjs" data-trim contenteditable>
+var objectString = JSON.stringify(object);
+
+var object = JSON.parse(objectString);
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>function</h3>
+						<pre><code class="hsjs" data-trim contenteditable>
+function ajoute(x, y) {
+    var total = x + y;
+    return total;
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>DOM (Document Object Model)</h3>
+
+						<p>Le DOM est le graph dont les noeuds sont les balises html consituant le document.</p>
+						<p>javascript permet de manipuler le DOM dynamiquement.</p>
+					</section>
+
+					<section>
+						<h3>Manipuler le DOM</h3>
+
+						<p>Lorsqu'une page html est lue, <code>window</code> et <code>document</code></p>
+						<pre><code class="hsjs" data-trim contenteditable>
+<!-- 
+<html>
+  <head>
+    <script>
+       window.onload = function() {
+
+         var heading = document.createElement("h1");
+         var heading_text = document.createTextNode("gros titre!");
+         heading.appendChild(heading_text);
+         document.body.appendChild(heading);
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html> 
+-->
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Manipuler le DOM</h3>
+
+						<p>Lorsqu'une page html est lue, <code>window</code> et <code>document</code> sont initialisées et on peut manipuler le DOM avec :</p>
+						<pre><code class="hsjs" data-trim contenteditable>
+document.getElementById(id)
+element.getElementsByTagName(name)
+document.createElement(name)
+parentNode.appendChild(node)
+element.innerHTML
+element.style.left
+element.setAttribute
+element.getAttribute
+element.addEventListener
+window.content
+window.onload
+window.dump
+window.scrollTo
+						</code></pre>
+					</section>
 					
+
+
+
+
 
 				</section>
 				
