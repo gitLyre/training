@@ -1,0 +1,46 @@
+@import url("base.css");
+
+@media only screen and (max-width: 660px) {
+
+	nav a {
+		display: block;
+		width: auto;
+		margin: 2px 0;
+		padding: .5em 0;
+	}
+
+	nav a:nth-child(2) {
+		margin: 0;
+	}
+
+	nav a:hover, nav a:focus {
+		transform: scale(1);
+	}
+
+	body > header::before {
+		font-size: 8rem;
+		line-height: 5rem;
+	}
+
+	h1 strong {
+		font-size: 2rem;
+		line-height: 0.8em;
+	}
+
+	h1 {
+		font-size: 0.5rem;
+	}
+
+	div > a {
+		display: block;
+		width: 100%;
+		font-size: 1rem;
+	}
+
+	footer section {
+		display: block;
+		width: 100%;
+	}
+
+}
+
